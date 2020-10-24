@@ -1,4 +1,4 @@
 # OpenGL
 OpenGL project for computer graphics
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/X--kLqLPNOI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/X--kLqLPNOI/0.jpg)](https://www.youtube.com/watch?v=X--kLqLPNOI)

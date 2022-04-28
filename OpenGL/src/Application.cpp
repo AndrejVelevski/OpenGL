@@ -170,7 +170,26 @@ int scene4();
 
 int main()
 {
-	scene1();
+	//init();
+	/*GLFWwindow* window = createWindow(640, 480, "OpenGL", false);
+
+
+
+	std::cout << glGetString(GL_VERSION) << std::endl;
+
+
+	while (!glfwWindowShouldClose(window))
+	{
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		glfwSwapBuffers(window);
+
+		glfwPollEvents();
+	}
+
+	glfwTerminate();*/
+
+	scene4();
 }
 
 int scene1()
@@ -178,7 +197,7 @@ int scene1()
 	init();
 	const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 	//glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
-	GLFWwindow* window = createWindow(1920, 1080, "OpenGL", true);
+	GLFWwindow* window = createWindow(1024, 768, "OpenGL", false);
 	glfwSetKeyCallback(window, keyboard_callback);
 	glfwSetCursorPosCallback(window, mousepos_callback);
 	glfwSetMouseButtonCallback(window, mousebutton_callback);
@@ -237,7 +256,7 @@ int scene2()
 	init();
 	const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 	//glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
-	GLFWwindow* window = createWindow(1920, 1080, "OpenGL", true);
+	GLFWwindow* window = createWindow(1024, 768, "OpenGL", false);
 	glfwSetKeyCallback(window, keyboard_callback);
 	glfwSetCursorPosCallback(window, mousepos_callback);
 	glfwSetMouseButtonCallback(window, mousebutton_callback);
@@ -322,8 +341,8 @@ int scene3()
 {
 	init();
 	const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
-	//glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
-	GLFWwindow* window = createWindow(1920, 1080, "OpenGL", true);
+	glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
+	GLFWwindow* window = createWindow(1920, 1080, "OpenGL", false);
 	glfwSetKeyCallback(window, keyboard_callback);
 	glfwSetCursorPosCallback(window, mousepos_callback);
 	glfwSetMouseButtonCallback(window, mousebutton_callback);
@@ -388,7 +407,7 @@ int scene4()
 	init();
 	const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 	//glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
-	GLFWwindow* window = createWindow(1920, 1080, "OpenGL", true);
+	GLFWwindow* window = createWindow(1024, 768, "OpenGL", false);
 	glfwSetKeyCallback(window, keyboard_callback);
 	glfwSetCursorPosCallback(window, mousepos_callback);
 	glfwSetMouseButtonCallback(window, mousebutton_callback);
@@ -474,6 +493,17 @@ int scene4()
 	wolf->position = { -2.0f, 0.0f, 6.0f };
 	wolf->currentAnimation = "wolf_rig|running";
 	models.push_back(wolf);
+
+	Model* formula = new Model("res/models/formula/formula.fbx");
+	formula->scale = { 0.005f, 0.005f, 0.005f };
+	formula->position = { -2.0f, 0.0f, 8.0f };
+	models.push_back(formula);
+
+	Model* lambo = new Model("res/models/lamborghini/lamborghini.fbx");
+	lambo->rotation.x = 180;
+	lambo->scale = { 0.25f, 0.25f, 0.25f };
+	lambo->position = { 2.0f, 0.0f, 8.0f };
+	models.push_back(lambo);
 
 	for (int i = 0; i < materials.size(); ++i)
 	{
